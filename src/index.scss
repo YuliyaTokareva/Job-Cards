@@ -1,0 +1,33 @@
+@import 'breakpoints.scss';
+@import 'src/variables.scss';
+@import 'cards.scss';
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $bacground-color-light-gray;
+  min-height: 100vh;
+  color: $font-color;
+  font-family: 'Proxima Nova';
+  position: relative;
+  font-size: 16px;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  margin: auto;
+  margin-top: 1px;
+  flex-direction: column;
+}
+.mob {
+  @include for-large-up {
+    display: none !important;
+  }
+}
+.desktop {
+  @include for-large-down {
+    display: none !important;
+  }
+}
