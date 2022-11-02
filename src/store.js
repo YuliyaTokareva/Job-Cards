@@ -1,6 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-//import shedulesReduser from './shedule/shedule.reducer';
+import shedulesReduser from './cards/shedule.reducer';
 
 const reducer = combineReducers({
   shedulesList: shedulesReduser
