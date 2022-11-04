@@ -1,6 +1,7 @@
 @import 'breakpoints.scss';
 @import 'src/variables.scss';
 @import 'cards.scss';
+@import 'post.scss';
 * {
   box-sizing: border-box;
 }
@@ -12,7 +13,6 @@ body {
   font-family: 'Proxima Nova';
   position: relative;
   font-size: 16px;
-  //background: url('./img/icon-location.png');
 }
 
 .page {
@@ -21,6 +21,21 @@ body {
   margin: auto;
   margin-top: 1px;
   flex-direction: column;
+}
+li {
+  list-style-image: url(./img/list-style.png);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.5625px;
+  color: rgba(56, 65, 93, 0.82);
+}
+
+ul {
+  margin: 0;
+  //padding: 0;
+  padding-left: 15px;
+  //margin-bottom: 43px;
 }
 .mob {
   @include for-large-up {

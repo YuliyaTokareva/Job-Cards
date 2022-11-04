@@ -9,9 +9,6 @@ module.exports = (env, argv) => {
     entry: './src/index.jsx',
     output: {
       filename: 'bundle.js'
-      // path: path.resolve(__dirname, 'dist')
-
-      // assetModuleFilename: 'src/assets/images/[name].[ext]'
     },
 
     module: {
@@ -37,14 +34,24 @@ module.exports = (env, argv) => {
               loader: 'file-loader',
 
               options: {
-                // type: 'asset/resource',
                 name: '[name].[ext]',
                 outputPath: 'img/'
-                // outputPath: 'img/',
-                // publicPath: 'img/'
               }
             }
           ]
+        },
+        {
+          // test: /\.html$/,
+          // use: [
+          //   // ...The other file-loader and extract-loader go here.
+          //   {
+          //     loader: 'html-loader'
+          //     // options: {
+          //     //   // THIS will resolve relative URLs to reference from the app/ directory
+          //     //   root: path.resolve(__dirname, 'app')
+          //     // }
+          //   }
+          // ]
         }
       ]
     },
