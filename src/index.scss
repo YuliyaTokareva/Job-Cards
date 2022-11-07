@@ -1,5 +1,6 @@
 @import 'breakpoints.scss';
 @import 'src/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
 // @import 'cards.scss';
 // @import 'post.scss';
 * {
@@ -10,7 +11,7 @@ body {
   //background: $bacground-color-light-gray;
   min-height: 100vh;
   color: $font-color;
-  font-family: 'Proxima Nova';
+  font-family: 'proxima-nova', sans-serif;
   position: relative;
   font-size: 16px;
 }
