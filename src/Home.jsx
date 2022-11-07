@@ -16,12 +16,6 @@ const Home = ({ getJobList }) => {
       <div className="cards-body">
         <Cards />
       </div>
-      {/* <Routes>
-        <Route path=":id" element={<Post />} />
-      </Routes> */}
-
-      {/* <Post />
-      <Footer /> */}
     </>
   );
 };

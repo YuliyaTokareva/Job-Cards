@@ -1,17 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useParams, useLocation } from 'react-router-dom';
-// import FirstImg from '../../../img/icon-location.png';
-// import BookmarkIcon from '../../svg/BookmarkIcon';
-// import StarRating from '../../svg/StarRating';
-// import LocationIcon from '../../svg/LocationIcon';
+
 import StarIcon from '../../../img/star-icon.png';
 import StaffImage from '../../../img/staff-image.jpg';
 import BitmapImage from '../../../img/bitmap-images.jpg';
 import CityImage from '../../../img/city-images.jpg';
 import mapImage from '../../../img/map.jpg';
 
-// import PaginationArrowIcon from '../../svg/PaginationArrowIcon';
 import { formaterDateToShedule } from '../../../utils/dateUtils';
 import * as jobSelectors from '../../job.selectors';
 import Footer from '../footer/Footer';
@@ -19,7 +15,7 @@ import './post.scss';
 const Post = ({ jobList }) => {
   const { pathname } = useLocation();
   const postId = pathname.slice(1);
-  const { id } = useParams();
+  // const { id } = useParams();
   const postData = jobList.filter((post) => post.id === postId)[0];
   return (
     <>
@@ -177,9 +173,9 @@ const Post = ({ jobList }) => {
             <h2 className="slider__title title">Attached images</h2>
             <div className="title-line"></div>
             <div className="slider__image">
-              <img src={`${StaffImage}`} alt="staff" />
-              <img src={`${BitmapImage}`} alt="rewarding" />
-              <img src={`${CityImage}`} alt="city" className="desktop" />
+              <img src={postData.pictures[0]} alt="staff" />
+              <img src={postData.pictures[1]} alt="rewarding" />
+              <img src={postData.pictures[2]} alt="city" className="desktop" />
             </div>
           </section>
           <section className="additional-info">
