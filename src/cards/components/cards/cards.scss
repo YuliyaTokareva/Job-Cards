@@ -1,7 +1,11 @@
+@import '../../../breakpoints.scss';
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+.cards-body {
+  background: #e6e9f2;
 }
 .card {
   background: #eff0f5;

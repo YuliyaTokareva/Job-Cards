@@ -1,0 +1,8 @@
+@import '../../../breakpoints.scss';
+footer {
+  @include for-large-up {
+    width: 1400px;
+    display: flex;
+    margin: auto;
+  }
+}

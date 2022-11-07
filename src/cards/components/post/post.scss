@@ -1,6 +1,46 @@
+@import '../../../breakpoints.scss';
+// .page.post {
+//   background-color: #fff;
+//   @include for-large-up {
+//     flex-direction: row;
+//     width: 1400px;
+//     margin-top: 56px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     justify-content: center;
+//   }
+// }
+.job {
+  @include for-large-up {
+    flex-direction: row;
+    width: 1400px;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+    min-height: 100vh;
+  }
+}
+.vacancy__header {
+  @include for-large-up {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.title-line__top-button {
+  @include for-large-up {
+    margin-bottom: 32px;
+  }
+}
 .mine-text {
   background: #ffffff;
   padding: 0 15px;
+  @include for-large-up {
+    max-width: 793px;
+    padding: 0 53px 0 19px;
+    margin-right: 82px;
+  }
 }
 .vacancy__title {
   padding: 0;
@@ -12,11 +52,23 @@
   line-height: 34px;
   letter-spacing: 0.413333px;
   color: #3a4562;
+  @include for-large-up {
+    margin-top: 0;
+  }
 }
 .title-line {
   border-bottom: 1px solid #3a4562;
   opacity: 0.13;
   margin-bottom: 37px;
+  @include for-large-up {
+    margin-bottom: 39px;
+  }
+}
+.vacancy__description-block {
+  @include for-large-up {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .vacancy__description {
   padding: 0;
@@ -28,6 +80,11 @@
   line-height: 30px;
   letter-spacing: -0.75px;
   color: #3a4562;
+  @include for-large-up {
+    max-width: 501px;
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
 }
 .vacancy__data {
   display: flex;
@@ -44,6 +101,10 @@
   line-height: 25px;
   letter-spacing: 0.191905px;
   color: rgba(56, 65, 93, 0.602109);
+  @include for-large-up {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 .vacancy__salary-date {
   padding: 0;
@@ -57,6 +118,10 @@
 .vacancy__buttons {
   display: flex;
   margin-bottom: 34px;
+  @include for-large-up {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
 .vacancy__button {
   padding: 0;
@@ -116,6 +181,9 @@
   letter-spacing: -0.625px;
   color: #3a4562;
   margin-bottom: 43px;
+  @include for-large-up {
+    margin-bottom: 5px;
+  }
 }
 
 .text-compensation {
@@ -123,23 +191,30 @@
 }
 .title-responsopilities {
   margin-bottom: 0;
+  @include for-large-up {
+    margin-bottom: 5px;
+  }
 }
 .vacancy-requirements__button-block {
   display: flex;
   justify-content: center;
   margin-top: 43px;
   margin-bottom: 135px;
+  @include for-large-up {
+    justify-content: start;
+    margin-bottom: 86px;
+  }
 }
-.vacancy-requirements__button-aply {
-  background: #384564;
-  border-radius: 8px;
-  width: 127px;
-  height: 52px;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 12px;
-}
+// .vacancy-requirements__button-aply {
+//   background: #384564;
+//   border-radius: 8px;
+//   width: 127px;
+//   height: 52px;
+//   text-transform: uppercase;
+//   color: #ffffff;
+//   font-weight: 600;
+//   font-size: 12px;
+// }
 .slider__image {
   overflow: hidden;
   display: flex;
@@ -185,7 +260,16 @@
   margin-left: 8px;
   text-align: end;
   padding-right: 12px;
-  max-width: 33.33%;
+
+  @include for-large-down {
+    max-width: 33.33%;
+  }
+  @include for-large-up {
+    width: 222px;
+    flex-grow: 0;
+    text-align: center;
+    padding-right: 0;
+  }
 }
 .additional-info__option-items :first-child {
   margin-left: 0;
@@ -208,8 +292,17 @@
   line-height: 50px;
   color: #988b49;
   text-align: center;
-  min-width: 33.33%;
+
   margin-left: 6px;
+  @include for-large-down {
+    min-width: 33.33%;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  @include for-large-up {
+    width: 220px;
+    margin-left: 10px;
+  }
 }
 .additional-info__benefits-item:first-child {
   margin-left: 0;
@@ -230,6 +323,10 @@
 .contacts {
   background-color: #ffffff;
   padding: 0 15px 37px;
+  @include for-large-up {
+    width: 402px;
+    padding: 0;
+  }
 }
 .contscts__data {
   background: #2a3047;
@@ -280,6 +377,9 @@
 }
 .contscts__text-info {
   padding: 31px 85px 31px 85px;
+  @include for-large-up {
+    padding: 31px 62px 31px 62px;
+  }
 }
 .contscts__map {
   width: 100%;
@@ -293,6 +393,39 @@
   left: 23%;
   top: 26%;
 }
+.contscts__map svg > path {
+  fill: #d8d8d8;
+}
 .contscts__map-img {
   width: 100%;
+}
+.footer__buttton {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #3a4562;
+  background: #e4e5e9;
+  border: none;
+  width: 213px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 162px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer__buttton-arrow {
+  width: 18px;
+  height: 16px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 19px;
+}
+.vacancy-requirements__text-list > li {
+  list-style-image: url(../../../img/list-style.png);
 }

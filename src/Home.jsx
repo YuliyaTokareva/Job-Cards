@@ -1,14 +1,40 @@
-import React from 'react';
-import FirstImg from './img/icon-location.png';
-import Staff from './img/bitmap-images.jpg';
-import Person from './img/staff-image.jpg';
-import Map from './img/map.jpg';
-import Location from './img/location.svg';
-import Star from './img/star-icon.png';
-import List from './img/list-style.png';
+import React, { useEffect } from 'react';
+import { BrowserRouter, HashRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Cards from './cards/components/cards/Cards';
+import Post from './cards/components/post/Post';
+import Footer from './cards/components/footer/Footer';
+import * as jobsActions from './cards/job.actions';
+import * as jobSelectors from './cards/job.selectors';
+const Home = ({ getJobList }) => {
+  useEffect(() => {
+    getJobList();
+  }, []);
 
-const Home = () => {
-  return <></>;
+  return (
+    <>
+      <div className="cards-body">
+        <Cards />
+      </div>
+      {/* <Routes>
+        <Route path=":id" element={<Post />} />
+      </Routes> */}
+
+      {/* <Post />
+      <Footer /> */}
+    </>
+  );
+};
+const mapDispatch = (dispatch) => {
+  return {
+    getJobList: () => dispatch(jobsActions.getJobList()),
+    formaterDateToShedule: (time) => formaterDateToShedule(time)
+  };
 };
 
-export default Home;
+const mapState = (state) => {
+  return {
+    jobList: jobSelectors.jobListSelector(state)
+  };
+};
+export default connect(mapState, mapDispatch)(Home);

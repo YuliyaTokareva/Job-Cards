@@ -1,9 +1,9 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import shedulesReduser from './cards/shedule.reducer';
+import jobsReduser from './cards/job.reducer';
 
 const reducer = combineReducers({
-  shedulesList: shedulesReduser
+  jobsData: jobsReduser
 });
 // eslint-disable-next-line
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
