@@ -1,22 +1,28 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, HashRouter, Route, Routes, NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { formaterDateToShedule } from '../../../utils/dateUtils';
-import FirstImg from '../../../img/icon-location.png';
+import PropTypes from 'prop-types';
+
 import BookmarkIcon from '../../svg/BookmarkIcon';
 import StarRating from '../../svg/StarRating';
 import LocationIcon from '../../svg/LocationIcon';
 import PaginationArrowIcon from '../../svg/PaginationArrowIcon';
-import * as jobsActions from '../../job.actions';
+
+import { formaterDateToShedule } from '../../../utils/dateUtils';
 import * as jobSelectors from '../../job.selectors';
+
 import './cards.scss';
+
 const Cards = ({ jobList }) => {
   return (
     <>
       {jobList.map((job) => {
         return (
           <article key={job.id} className="card">
-            <img src={job.pictures[1]} alt="logo" className="carad__logo"></img>
+            <img
+              src={`${job.pictures[0]}.jpg?random&dummyParam=${job.id}`}
+              alt="logo"
+              className="carad__logo"></img>
             <div className="card__text">
               <div className="card__header mob">
                 <div className="card__rating">
@@ -40,7 +46,7 @@ const Cards = ({ jobList }) => {
                 <span className="card__location-icon">
                   <LocationIcon />
                 </span>
-                <p className="card__location-description">Vienna, Austria</p>
+                <p className="card__location-description">{job.address}</p>
               </div>
             </div>
             <div className="rating desktop">
@@ -94,9 +100,12 @@ const Cards = ({ jobList }) => {
     </>
   );
 };
+Cards.propTypes = {
+  jobList: PropTypes.array,
+  formaterDateToShedule: PropTypes.func.isRequired
+};
 const mapDispatch = (dispatch) => {
   return {
-    // getJobList: () => dispatch(jobsActions.getJobList()),
     formaterDateToShedule: (time) => formaterDateToShedule(time)
   };
 };

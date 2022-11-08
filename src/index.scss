@@ -1,28 +1,27 @@
 @import 'breakpoints.scss';
 @import 'src/variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+//@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
 
-// @font-face {
-//   font-family: 'proxima_nova_rgregular';
-//   src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
-//   src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix')
-//       format('embedded-opentype'),
-//     url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
-//     url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
-//     url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular')
-//       format('svg');
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'proxima_nova_rgregular';
+  src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+  src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
 }
 
 body {
-  //background: $bacground-color-light-gray;
   min-height: 100vh;
   color: $font-color;
-  font-family: 'proxima-nova', sans-serif;
+  font-family: 'proxima_nova_rgregular';
   position: relative;
   font-size: 16px;
 }

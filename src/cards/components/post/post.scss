@@ -200,6 +200,7 @@
   justify-content: center;
   margin-top: 43px;
   margin-bottom: 135px;
+
   @include for-large-up {
     justify-content: start;
     margin-bottom: 86px;
@@ -225,6 +226,7 @@
   background: #d8d8d8;
   border-radius: 8px;
   margin-right: 5px;
+  object-fit: cover;
 }
 .additional-info {
   margin-bottom: 63px;
