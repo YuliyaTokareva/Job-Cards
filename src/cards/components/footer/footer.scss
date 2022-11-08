@@ -1,8 +1,35 @@
 @import '../../../breakpoints.scss';
-footer {
+.footer {
   @include for-large-up {
     width: 1400px;
     display: flex;
     margin: auto;
   }
+}
+.footer__buttton {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #3a4562;
+  background: #e4e5e9;
+  border: none;
+  width: 213px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 162px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer__buttton-arrow {
+  width: 18px;
+  height: 16px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 19px;
 }

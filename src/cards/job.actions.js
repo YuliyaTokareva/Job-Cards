@@ -1,4 +1,5 @@
 import fetchJobsList from './jobGateway';
+
 export const JOB_LIST_RECIEVED = 'JOB_LIST_RECIEVED';
 export const jobListRecieved = (jobList) => {
   const action = {

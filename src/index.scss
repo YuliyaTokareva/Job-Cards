@@ -1,6 +1,6 @@
 @import 'breakpoints.scss';
-@import 'src/variables.scss';
-//@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap');
 
 @font-face {
   font-family: 'proxima_nova_rgregular';
@@ -11,17 +11,16 @@
     url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
     url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular')
       format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
+
 * {
   box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
-  color: $font-color;
-  font-family: 'proxima_nova_rgregular';
+  color: rgba(56, 65, 93, 0.82);
+  font-family: 'proxima_nova_rgregular', 'Figtree', sans-serif;
   position: relative;
   font-size: 16px;
 }
@@ -32,10 +31,13 @@ body {
   margin: auto;
   margin-top: 1px;
   flex-direction: column;
-  // background: #e6e9f2;
 }
+ul {
+  margin: 0;
+  padding-left: 15px;
+}
+
 li {
-  // list-style-image: url(./img/list-style.png);
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -43,12 +45,6 @@ li {
   color: rgba(56, 65, 93, 0.82);
 }
 
-ul {
-  margin: 0;
-  //padding: 0;
-  padding-left: 15px;
-  //margin-bottom: 43px;
-}
 .button {
   margin: 0;
   padding: 0;

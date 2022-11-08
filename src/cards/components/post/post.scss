@@ -1,15 +1,5 @@
 @import '../../../breakpoints.scss';
-// .page.post {
-//   background-color: #fff;
-//   @include for-large-up {
-//     flex-direction: row;
-//     width: 1400px;
-//     margin-top: 56px;
-//     margin-left: auto;
-//     margin-right: auto;
-//     justify-content: center;
-//   }
-// }
+
 .job {
   @include for-large-up {
     flex-direction: row;
@@ -22,17 +12,17 @@
     min-height: 100vh;
   }
 }
-.vacancy__header {
-  @include for-large-up {
-    display: flex;
-    justify-content: space-between;
-  }
+.title {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.413333px;
+  color: #3a4562;
+  margin-bottom: 10px;
 }
-.title-line__top-button {
-  @include for-large-up {
-    margin-bottom: 32px;
-  }
-}
+
 .mine-text {
   background: #ffffff;
   padding: 0 15px;
@@ -42,20 +32,6 @@
     margin-right: 82px;
   }
 }
-.vacancy__title {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 12px;
-  margin-top: 24px;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: 0.413333px;
-  color: #3a4562;
-  @include for-large-up {
-    margin-top: 0;
-  }
-}
 .title-line {
   border-bottom: 1px solid #3a4562;
   opacity: 0.13;
@@ -63,126 +39,171 @@
   @include for-large-up {
     margin-bottom: 39px;
   }
+  &__top-button {
+    @include for-large-up {
+      margin-bottom: 32px;
+    }
+  }
 }
-.vacancy__description-block {
-  @include for-large-up {
+.vacancy {
+  &__header {
+    @include for-large-up {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 12px;
+    margin-top: 24px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0.413333px;
+    color: #3a4562;
+    @include for-large-up {
+      margin-top: 0;
+    }
+  }
+
+  &__description-block {
+    @include for-large-up {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__description {
+    padding: 0;
+    margin: 0;
+    margin-right: 16px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.75px;
+    color: #3a4562;
+    @include for-large-up {
+      max-width: 501px;
+      margin-bottom: 5px;
+      margin-right: 0;
+    }
+  }
+  &__data {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 14px;
   }
-}
-.vacancy__description {
-  padding: 0;
-  margin: 0;
-  margin-right: 16px;
-  margin-bottom: 5px;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: -0.75px;
-  color: #3a4562;
-  @include for-large-up {
-    max-width: 501px;
-    margin-bottom: 5px;
-    margin-right: 0;
-  }
-}
-.vacancy__data {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-.vacancy__time {
-  padding: 0;
-  margin: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 25px;
-  letter-spacing: 0.191905px;
-  color: rgba(56, 65, 93, 0.602109);
-  @include for-large-up {
-    font-size: 18px;
-    line-height: 24px;
-  }
-}
-.vacancy__salary-date {
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: -0.5625px;
-  color: rgba(56, 65, 93, 0.82);
-}
-.vacancy__buttons {
-  display: flex;
-  margin-bottom: 34px;
-  @include for-large-up {
+  &__time {
+    padding: 0;
+    margin: 0;
     margin-top: auto;
     margin-bottom: auto;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 0.191905px;
+    color: rgba(56, 65, 93, 0.602109);
+    @include for-large-up {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  &__salary-date {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.5625px;
+    color: rgba(56, 65, 93, 0.82);
+  }
+  &__buttons {
+    display: flex;
+    margin-bottom: 34px;
+    @include for-large-up {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  &__button {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    height: 23px;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.5px;
+    color: rgba(56, 65, 93, 0.82);
+    display: flex;
+  }
+
+  &__button-icon-star {
+    width: 20px;
+    height: 20px;
+    margin-right: 11px;
+  }
+  &__share {
+    margin-left: 36px;
+  }
+  &__share-icon {
+    width: 18px;
+    height: 20px;
+    margin-right: 11px;
+  }
+
+  &__salary-price {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.625px;
+    color: #3a4562;
   }
 }
-.vacancy__button {
-  padding: 0;
-  margin: 0;
-  background: #fff;
-  height: 23px;
-  border: none;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 23px;
-  letter-spacing: -0.5px;
-  color: rgba(56, 65, 93, 0.82);
-  display: flex;
-}
+.vacancy-requirements {
+  &__text {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.5625px;
+    color: rgba(56, 65, 93, 0.82);
+    margin-right: 16px;
+    margin-bottom: 43px;
+  }
 
-.vacancy__button-icon-star {
-  width: 20px;
-  height: 20px;
-  margin-right: 11px;
-}
-.vacancy__share {
-  margin-left: 36px;
-}
-.vacancy__share-icon {
-  width: 18px;
-  height: 20px;
-  margin-right: 11px;
-}
+  &__title {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.625px;
+    color: #3a4562;
+    margin-bottom: 43px;
+    @include for-large-up {
+      margin-bottom: 5px;
+    }
+  }
+  &__text-list > li {
+    list-style-image: url(../../../img/list-style.png);
+  }
+  &__button-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 43px;
+    margin-bottom: 135px;
 
-.vacancy__salary-price {
-  padding: 0;
-  margin: 0;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: -0.625px;
-  color: #3a4562;
-}
-.vacancy-requirements__text {
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: -0.5625px;
-  color: rgba(56, 65, 93, 0.82);
-  margin-right: 16px;
-  margin-bottom: 43px;
-}
-.vacancy-requirements__title {
-  padding: 0;
-  margin: 0;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: -0.625px;
-  color: #3a4562;
-  margin-bottom: 43px;
-  @include for-large-up {
-    margin-bottom: 5px;
+    @include for-large-up {
+      justify-content: start;
+      margin-bottom: 86px;
+    }
   }
 }
 
@@ -195,133 +216,106 @@
     margin-bottom: 5px;
   }
 }
-.vacancy-requirements__button-block {
-  display: flex;
-  justify-content: center;
-  margin-top: 43px;
-  margin-bottom: 135px;
-
-  @include for-large-up {
-    justify-content: start;
-    margin-bottom: 86px;
-  }
-}
-// .vacancy-requirements__button-aply {
-//   background: #384564;
-//   border-radius: 8px;
-//   width: 127px;
-//   height: 52px;
-//   text-transform: uppercase;
-//   color: #ffffff;
-//   font-weight: 600;
-//   font-size: 12px;
-// }
-.slider__image {
-  overflow: hidden;
-  display: flex;
-}
-.slider__image img {
-  width: 209px;
-  height: 115px;
-  background: #d8d8d8;
-  border-radius: 8px;
-  margin-right: 5px;
-  object-fit: cover;
-}
-.additional-info {
-  margin-bottom: 63px;
-}
-.additional-info__option-name {
-  margin: 0;
-  padding: 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: -0.5625px;
-  color: rgba(56, 65, 93, 0.82);
-  margin-bottom: 10px;
-}
-.additional-info__option-items {
-  display: flex;
-  list-style-type: none;
-  padding-left: 0;
-  margin-bottom: 22px;
-}
-.additional-info__option-item {
-  background: rgba(161, 177, 219, 0.317343);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
-  color: #55699e;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 50px;
-  letter-spacing: -0.457143px;
-  flex-grow: 1;
-  flex-shrink: 0;
-  height: 50px;
-  margin-left: 8px;
-  text-align: end;
-  padding-right: 12px;
-
-  @include for-large-down {
-    max-width: 33.33%;
-  }
-  @include for-large-up {
-    width: 222px;
-    flex-grow: 0;
-    text-align: center;
-    padding-right: 0;
-  }
-}
-.additional-info__option-items :first-child {
-  margin-left: 0;
-}
-.additional-info__benefits-items {
-  display: flex;
-  list-style-type: none;
-  padding-left: 0;
-}
-.additional-info__benefits-item {
-  background: rgba(255, 207, 0, 0.15);
-  border: 1px solid #ffcf00;
-  border-radius: 8px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  height: 50px;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: -0.4px;
-  line-height: 50px;
-  color: #988b49;
-  text-align: center;
-
-  margin-left: 6px;
-  @include for-large-down {
-    min-width: 33.33%;
-    padding-right: 5px;
-    padding-left: 5px;
-  }
-  @include for-large-up {
-    width: 220px;
-    margin-left: 10px;
-  }
-}
-.additional-info__benefits-item:first-child {
-  margin-left: 0;
-}
-.title {
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: 0.413333px;
-  color: #3a4562;
-  margin-bottom: 10px;
-}
 .slider {
   margin-bottom: 64px;
+  &__image {
+    overflow: hidden;
+    display: flex;
+  }
+  &__image img {
+    width: 209px;
+    height: 115px;
+    background: #d8d8d8;
+    border-radius: 8px;
+    margin-right: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
 }
+
+.additional-info {
+  margin-bottom: 63px;
+
+  &__option-name {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.5625px;
+    color: rgba(56, 65, 93, 0.82);
+    margin-bottom: 10px;
+  }
+  &__option-items {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 22px;
+  }
+  &__option-item {
+    background: rgba(161, 177, 219, 0.317343);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    color: #55699e;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 50px;
+    letter-spacing: -0.457143px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    height: 50px;
+    margin-left: 8px;
+    text-align: end;
+    padding-right: 12px;
+
+    @include for-large-down {
+      max-width: 33.33%;
+    }
+    @include for-large-up {
+      width: 222px;
+      flex-grow: 0;
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+  &__option-items :first-child {
+    margin-left: 0;
+  }
+  &__benefits-items {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  &__benefits-item {
+    background: rgba(255, 207, 0, 0.15);
+    border: 1px solid #ffcf00;
+    border-radius: 8px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 50px;
+    color: #988b49;
+    text-align: center;
+
+    margin-left: 6px;
+    @include for-large-down {
+      min-width: 33.33%;
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+    @include for-large-up {
+      width: 220px;
+      margin-left: 10px;
+    }
+  }
+  &__benefits-item:first-child {
+    margin-left: 0;
+  }
+}
+
 .contacts {
   background-color: #ffffff;
   padding: 0 15px 37px;
@@ -329,105 +323,76 @@
     width: 402px;
     padding: 0;
   }
-}
-.contscts__data {
-  background: #2a3047;
-  border-radius: 8px;
-}
 
-.contscts__street {
-  display: flex;
-}
-
-.contscts__street svg {
-  width: 13px;
-  height: 18px;
-  margin-right: 8px;
-}
-.contscts__name {
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: 0.23619px;
-  margin-bottom: 18px;
-  color: #e7eaf0;
-  max-width: 240px;
-}
-.contscts__street-text {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 23px;
-  letter-spacing: -0.5px;
-  color: #e7eaf0;
-  max-width: 240px;
-  margin-bottom: 6px;
-}
-.contscts__phone,
-.contscts__mail {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 23px;
-  letter-spacing: -0.5px;
-  color: rgba(255, 255, 255, 0.669635);
-  display: block;
-  text-decoration: none;
-}
-.contscts__text-info {
-  padding: 31px 85px 31px 85px;
-  @include for-large-up {
-    padding: 31px 62px 31px 62px;
+  &__data {
+    background: #2a3047;
+    border-radius: 8px;
   }
-}
-.contscts__map {
-  width: 100%;
-  position: relative;
-}
-.contscts__map svg {
-  position: absolute;
-  z-index: 12;
-  width: 26px;
-  height: 36px;
-  left: 23%;
-  top: 26%;
-}
-.contscts__map svg > path {
-  fill: #d8d8d8;
-}
-.contscts__map-img {
-  width: 100%;
-}
-.footer__buttton {
-  margin: 0;
-  padding: 0;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #3a4562;
-  background: #e4e5e9;
-  border: none;
-  width: 213px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 162px;
-  cursor: pointer;
-  text-decoration: none;
-}
-.footer__buttton-arrow {
-  width: 18px;
-  height: 16px;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: 19px;
-}
-.vacancy-requirements__text-list > li {
-  list-style-image: url(../../../img/list-style.png);
+
+  &__street {
+    display: flex;
+  }
+
+  &__street svg {
+    width: 13px;
+    height: 18px;
+    margin-right: 8px;
+  }
+  &__name {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.23619px;
+    margin-bottom: 18px;
+    color: #e7eaf0;
+    max-width: 240px;
+  }
+  &__street-text {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.5px;
+    color: #e7eaf0;
+    max-width: 240px;
+    margin-bottom: 6px;
+  }
+  &__phone,
+  &__mail {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.5px;
+    color: rgba(255, 255, 255, 0.669635);
+    display: block;
+    text-decoration: none;
+  }
+  &__text-info {
+    padding: 31px 85px 31px 85px;
+    @include for-large-up {
+      padding: 31px 62px 31px 62px;
+    }
+  }
+  &__map {
+    width: 100%;
+    position: relative;
+  }
+  &__map svg {
+    position: absolute;
+    z-index: 12;
+    width: 26px;
+    height: 36px;
+    left: 23%;
+    top: 26%;
+  }
+  &__map svg > path {
+    fill: #d8d8d8;
+  }
+  &__map-img {
+    width: 100%;
+  }
 }

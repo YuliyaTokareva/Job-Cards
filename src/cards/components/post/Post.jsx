@@ -132,24 +132,24 @@ const Post = ({ jobList, getJobList }) => {
             <aside className="contacts">
               <h2 className="contacts__title title mob">Contacts</h2>
               <div className="title-line mob"></div>
-              <div className="contscts__data">
-                <div className="contscts__text-info">
-                  <p className="contscts__name">{postData.name}</p>
-                  <div className="contscts__street">
+              <div className="contacts__data">
+                <div className="contacts__text-info">
+                  <p className="contacts__name">{postData.name}</p>
+                  <div className="contacts__street">
                     <MapIcon />
-                    <p className="contscts__street-text">{postData.address}</p>
+                    <p className="contacts__street-text">{postData.address}</p>
                   </div>
 
-                  <a href={`tel:${postData.phone}`} className="contscts__phone">
+                  <a href={`tel:${postData.phone}`} className="contacts__phone">
                     {postData.phone},
                   </a>
-                  <a href={`mailto:${postData.email}`} className="contscts__mail">
+                  <a href={`mailto:${postData.email}`} className="contacts__mail">
                     {postData.email}
                   </a>
                 </div>
-                <div className="contscts__map">
+                <div className="contacts__map">
                   <MapIcon />
-                  <img src={`${mapImage}`} alt="map" className="contscts__map-img" />
+                  <img src={`${mapImage}`} alt="map" className="contacts__map-img" />
                 </div>
               </div>
             </aside>

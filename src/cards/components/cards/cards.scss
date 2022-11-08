@@ -22,7 +22,6 @@
   }
   @include for-large-up {
     width: 1400px;
-    //flex-grow: 1;
     padding: 24px 16px;
     height: 164px;
   }
@@ -163,8 +162,7 @@
     margin-bottom: auto;
     flex-grow: 1;
     flex-shrink: 1;
-    // padding-left: 42px;
-    // padding-right: 42px;
+
     @include for-large-up {
       border-left: 1.3px solid #dee3ef;
       border-right: 1.3px solid #dee3ef;
