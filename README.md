@@ -1,4 +1,4 @@
-<h1>Pet project</h1>
+<h1>Job cards</h1>
 
 <h2><a href="https://comforting-strudel-35f6c1.netlify.app" rel="nofollow">Site link</a></h2>
 
@@ -14,14 +14,14 @@
 <h3>Desired Stack:</h3>
 
 <ul>
-<li>ReactJs, React Hoocks</li>
-<li>RHTML5, CSS3, SCSS</li>
+<li>ReactJs, React Hoocks,Redux, SPA by react-router-dom</li>
+<li>HTML5, CSS3, SCSS</li>
+<li>REST APIs</li>
 <li>Redux</li>
 <li>Typescript</li>
 <li>ESLint</li>
 <li>Webpack</li>
 <li>Babel</li>
-<li>REST APIs</li>
 
 </ul>
 
