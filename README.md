@@ -21,6 +21,8 @@
 <li>ESLint</li>
 <li>Webpack</li>
 <li>Babel</li>
+<li>REST APIs</li>
+
 </ul>
 
 <h3>Design Job list page:</h3>
