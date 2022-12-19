@@ -14,9 +14,13 @@
 <h3>Desired Stack:</h3>
 
 <ul>
+<li>ReactJs, React Hoocks</li>
+<li>RHTML5, CSS3, SCSS</li>
+<li>Redux</li>
 <li>Typescript</li>
-<li>NextJs/ReactJs</li>
-<li>Tailwindcss</li>
+<li>ESLint</li>
+<li>Webpack</li>
+<li>Babel</li>
 </ul>
 
 <h3>Design Job list page:</h3>
