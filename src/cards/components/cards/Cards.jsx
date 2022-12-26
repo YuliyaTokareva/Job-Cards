@@ -6,14 +6,17 @@ import PropTypes from 'prop-types';
 import BookmarkIcon from '../../svg/BookmarkIcon';
 import StarRating from '../../svg/StarRating';
 import LocationIcon from '../../svg/LocationIcon';
-import PaginationArrowIcon from '../../svg/PaginationArrowIcon';
-
+import Pagination from '../pagination/Pagination';
 import { formaterDateToShedule } from '../../../utils/dateUtils';
 import * as jobSelectors from '../../job.selectors';
 
 import './cards.scss';
 
 const Cards = ({ jobList }) => {
+  const starsRating = Array(5)
+    .fill()
+    .map((e, i) => i + 1);
+
   return (
     <>
       {jobList.map((job) => {
@@ -26,11 +29,9 @@ const Cards = ({ jobList }) => {
             <div className="card__text">
               <div className="card__header mob">
                 <div className="card__rating">
-                  <StarRating />
-                  <StarRating />
-                  <StarRating />
-                  <StarRating />
-                  <StarRating />
+                  {starsRating.map((el) => (
+                    <StarRating key={el} />
+                  ))}
                 </div>
                 <p className="card__header-text">Posted {formaterDateToShedule(job.createdAt)}</p>
               </div>
@@ -39,9 +40,7 @@ const Cards = ({ jobList }) => {
                   {job.title}
                 </NavLink>
               </h2>
-              <p className="card__description">
-                Department name • Allgemeines Krankenhaus der Stadt Wien - AKH
-              </p>
+              <p className="card__description">{`Department name • ${job.name}`}</p>
               <div className="card__location">
                 <span className="card__location-icon">
                   <LocationIcon />
@@ -50,11 +49,9 @@ const Cards = ({ jobList }) => {
               </div>
             </div>
             <div className="rating desktop">
-              <StarRating />
-              <StarRating />
-              <StarRating />
-              <StarRating />
-              <StarRating />
+              {starsRating.map((el) => (
+                <StarRating key={el} />
+              ))}
             </div>
             <div className="bookmark desktop">
               <BookmarkIcon />
@@ -63,40 +60,7 @@ const Cards = ({ jobList }) => {
           </article>
         );
       })}
-      <section className="pagination">
-        <button className="pagination__button left">
-          <PaginationArrowIcon />
-        </button>
-        <div className="pagination__numbers">
-          <ul className="pagination__list">
-            <li className="pagination__number">
-              <a href="#">1</a>
-            </li>
-            <li className="pagination__number active">
-              <a href="#">2</a>
-            </li>
-            <li className="pagination__number">
-              <a href="#">3</a>
-            </li>
-            <li className="pagination__number">
-              <a href="#">4</a>
-            </li>
-            <li className="pagination__number">
-              <a href="#">5</a>
-            </li>
-            <li className="pagination__number">
-              <a href="#">...</a>
-            </li>
-            <li className="pagination__number">
-              <a href="#">18</a>
-            </li>
-          </ul>
-        </div>
-
-        <button className="pagination__button right">
-          <PaginationArrowIcon />
-        </button>
-      </section>
+      <Pagination />
     </>
   );
 };

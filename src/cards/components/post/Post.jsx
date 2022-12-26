@@ -4,15 +4,17 @@ import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import StarIcon from '../../../img/star-icon.png';
-import mapImage from '../../../img/map.jpg';
-import MapIcon from '../../svg/MapIcon';
 import ShareIcon from '../../svg/ShareIcon';
 
 import { formaterDateToShedule } from '../../../utils/dateUtils';
 import * as jobsActions from '../../job.actions';
 import * as jobSelectors from '../../job.selectors';
+import PostDescriptionHeader from '../postDescriptionHeader/PostDescriptionHeader';
+import Aside from '../aside/Aside';
+import Slider from '../slider/Slider';
 import Footer from '../footer/Footer';
 import './post.scss';
+
 const Post = ({ jobList, getJobList }) => {
   const { pathname } = useLocation();
   const postId = pathname.slice(1);
@@ -20,143 +22,79 @@ const Post = ({ jobList, getJobList }) => {
     getJobList();
   }, []);
   const postData = jobList.filter((post) => post.id === postId)[0];
+  if (!postData) {
+    return '';
+  }
   return (
     <>
-      {!postData ? (
-        ''
-      ) : (
-        <>
-          <div className="job">
-            <div className="mine-text">
-              <section className="vacancy">
-                <div className="vacancy__header">
-                  <h1 className="vacancy__title">Job Details</h1>
-                  <div className="vacancy__buttons desktop">
-                    <button className="vacancy__button vacancy__selected">
-                      <img
-                        src={`${StarIcon}`}
-                        alt="star-icon"
-                        className="vacancy__button-icon-star"
-                      />
-                      Save to my list
-                    </button>
-                    <button className="vacancy__button vacancy__share">
-                      <ShareIcon />
-                      Share
-                    </button>
-                  </div>
-                </div>
-
-                <div className="title-line"></div>
-                <div className="title-line__top-button desktop">
-                  <button className="button">Apply now</button>
-                </div>
-                <div className="vacancy__buttons mob">
-                  <button className="vacancy__button vacancy__selected">
-                    <img
-                      src={`${StarIcon}`}
-                      alt="star-icon"
-                      className="vacancy__button-icon-star"
-                    />
-
-                    <span>Save to my list</span>
-                  </button>
-                  <button className="vacancy__button vacancy__share">
-                    <ShareIcon />
-                    Share
-                  </button>
-                </div>
-                <div className="vacancy__description-block">
-                  <p className="vacancy__description">{postData.title}</p>
-                  <div className="vacancy__salary desktop">
-                    <p className="vacancy__salary-price">€ {postData.salary}</p>
-                    <p className="vacancy__salary-date">Brutto, per year</p>
-                  </div>
-                </div>
-                <div className="vacancy__data">
-                  <p className="vacancy__time">
-                    Posted {formaterDateToShedule(postData.createdAt)}
-                  </p>
-                  <div className="vacancy__salary mob">
-                    <p className="vacancy__salary-date">Brutto, per year</p>
-                    <p className="vacancy__salary-price">€ {postData.salary}</p>
-                  </div>
-                </div>
-              </section>
-              <section className="vacancy-requirements">
-                <p className="vacancy-requirements__text">{postData.description}</p>
-                <div className="vacancy-requirements__button-block">
-                  <button className="vacancy-requirements__button-aply button">Apply now</button>
-                </div>
-              </section>
-              <section className="slider">
-                <h2 className="slider__title title">Attached images</h2>
-                <div className="title-line"></div>
-                <div className="slider__image">
-                  {postData.pictures.map((img) => {
-                    return (
-                      <img
-                        src={`${img}.jpg?random&dummyParam=${Math.floor(Math.random() * 100)}`}
-                        alt="attached image"
-                        key={Math.floor(Math.random() * 100)}
-                      />
-                    );
-                  })}
-                </div>
-              </section>
-              <section className="additional-info">
-                <h2 className="additional-info__title title">Additional info</h2>
-                <div className="title-line"></div>
-                <div className="additional-info__employment">
-                  <h4 className="additional-info__option-name">Employment type</h4>
-                  <ul className="additional-info__option-items">
-                    {postData.employment_type.map((type) => (
-                      <li className="additional-info__option-item" key={type}>
-                        {type}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="additional-info__benefits">
-                  <h4 className="additional-info__option-name">Benefits</h4>
-                  <ul className="additional-info__benefits-items">
-                    {postData.benefits.map((type) => (
-                      <li className="additional-info__benefits-item" key={type}>
-                        {type}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </section>
-            </div>
-            <aside className="contacts">
-              <h2 className="contacts__title title mob">Contacts</h2>
-              <div className="title-line mob"></div>
-              <div className="contacts__data">
-                <div className="contacts__text-info">
-                  <p className="contacts__name">{postData.name}</p>
-                  <div className="contacts__street">
-                    <MapIcon />
-                    <p className="contacts__street-text">{postData.address}</p>
-                  </div>
-
-                  <a href={`tel:${postData.phone}`} className="contacts__phone">
-                    {postData.phone},
-                  </a>
-                  <a href={`mailto:${postData.email}`} className="contacts__mail">
-                    {postData.email}
-                  </a>
-                </div>
-                <div className="contacts__map">
-                  <MapIcon />
-                  <img src={`${mapImage}`} alt="map" className="contacts__map-img" />
-                </div>
+      <div className="job">
+        <div className="mine-text">
+          <section className="vacancy">
+            <div className="vacancy__header">
+              <h1 className="vacancy__title">Job Details</h1>
+              <div className="vacancy__buttons desktop">
+                <button className="vacancy__button vacancy__selected">
+                  <img src={`${StarIcon}`} alt="star-icon" className="vacancy__button-icon-star" />
+                  Save to my list
+                </button>
+                <button className="vacancy__button vacancy__share">
+                  <ShareIcon />
+                  Share
+                </button>
               </div>
-            </aside>
-          </div>
-          <Footer />
-        </>
-      )}
+            </div>
+
+            <div className="title-line"></div>
+            <div className="title-line__top-button desktop">
+              <button className="button">Apply now</button>
+            </div>
+            <div className="vacancy__buttons mob">
+              <button className="vacancy__button vacancy__selected">
+                <img src={`${StarIcon}`} alt="star-icon" className="vacancy__button-icon-star" />
+                <span>Save to my list</span>
+              </button>
+              <button className="vacancy__button vacancy__share">
+                <ShareIcon />
+                Share
+              </button>
+            </div>
+            <PostDescriptionHeader postData={postData} />
+          </section>
+          <section className="vacancy-requirements">
+            <p className="vacancy-requirements__text">{postData.description}</p>
+            <div className="vacancy-requirements__button-block">
+              <button className="vacancy-requirements__button-aply button">Apply now</button>
+            </div>
+          </section>
+          <Slider postData={postData} />
+          <section className="additional-info">
+            <h2 className="additional-info__title title">Additional info</h2>
+            <div className="title-line"></div>
+            <div className="additional-info__employment">
+              <h4 className="additional-info__option-name">Employment type</h4>
+              <ul className="additional-info__option-items">
+                {postData.employment_type.map((type) => (
+                  <li className="additional-info__option-item" key={type}>
+                    {type}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="additional-info__benefits">
+              <h4 className="additional-info__option-name">Benefits</h4>
+              <ul className="additional-info__benefits-items">
+                {postData.benefits.map((type) => (
+                  <li className="additional-info__benefits-item" key={type}>
+                    {type}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        </div>
+        <Aside postData={postData} />
+      </div>
+      <Footer />
     </>
   );
 };
