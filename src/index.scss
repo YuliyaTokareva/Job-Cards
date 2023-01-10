@@ -1,5 +1,5 @@
 @import 'breakpoints.scss';
-
+@import 'src/variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap');
 
 @font-face {
@@ -19,7 +19,7 @@
 
 body {
   min-height: 100vh;
-  color: rgba(56, 65, 93, 0.82);
+  color: $color-main-text;
   font-family: 'proxima_nova_rgregular', 'Figtree', sans-serif;
   position: relative;
   font-size: 16px;
@@ -32,6 +32,15 @@ body {
   margin-top: 1px;
   flex-direction: column;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
 ul {
   margin: 0;
   padding-left: 15px;
@@ -42,18 +51,21 @@ li {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: -0.5625px;
-  color: rgba(56, 65, 93, 0.82);
+  color: $color-main-text;
 }
-
+p {
+  margin: 0;
+  padding: 0;
+}
 .button {
   margin: 0;
   padding: 0;
-  background: #384564;
+  background: $main-button-bg;
   border-radius: 8px;
   width: 127px;
   height: 52px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: $color-white-text;
   font-weight: 600;
   font-size: 12px;
   cursor: pointer;
@@ -67,4 +79,9 @@ li {
   @include for-large-down {
     display: none !important;
   }
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

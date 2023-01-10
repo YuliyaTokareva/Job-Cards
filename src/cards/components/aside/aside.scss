@@ -1,0 +1,93 @@
+@import '../../../breakpoints.scss';
+@import 'src/variables.scss';
+
+.title-line {
+  border-bottom: $border-title-line;
+  opacity: 0.13;
+  margin-bottom: 37px;
+  @include for-large-up {
+    margin-bottom: 39px;
+  }
+  &__top-button {
+    @include for-large-up {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.contacts {
+  background-color: $pagination-button-bg;
+  padding: 0 15px 37px;
+  @include for-large-up {
+    width: 402px;
+    padding: 0;
+  }
+
+  &__data {
+    background: $main-dark-bg;
+    border-radius: $br;
+  }
+
+  &__street {
+    display: flex;
+  }
+
+  &__street svg {
+    width: 13px;
+    height: 18px;
+    margin-right: 8px;
+  }
+  &__name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.23619px;
+    margin-bottom: 18px;
+    color: $color-name-text;
+    max-width: 240px;
+  }
+  &__street-text {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.5px;
+    color: $color-name-text;
+    max-width: 240px;
+    margin-bottom: 6px;
+  }
+  &__phone,
+  &__mail {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.5px;
+    color: $color-acide-text;
+    display: block;
+    text-decoration: none;
+  }
+  &__text-info {
+    padding: 31px 85px 31px 85px;
+    @include for-large-up {
+      padding: 31px 62px 31px 62px;
+    }
+  }
+  &__map {
+    width: 100%;
+    position: relative;
+  }
+  &__map svg {
+    position: absolute;
+    z-index: 12;
+    width: 26px;
+    height: 36px;
+    left: 23%;
+    top: 26%;
+  }
+  &__map svg > path {
+    fill: $main-logo-bg;
+  }
+  &__map-img {
+    width: 100%;
+  }
+}

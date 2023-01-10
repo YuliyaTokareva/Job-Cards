@@ -1,6 +1,6 @@
 import React from 'react';
 import PaginationArrowIcon from '../../svg/PaginationArrowIcon';
-import '../cards/cards.scss';
+import '../pagination/pagination.scss';
 
 const Pagination = () => {
   return (
@@ -40,19 +40,5 @@ const Pagination = () => {
     </section>
   );
 };
-// Cards.propTypes = {
-//   jobList: PropTypes.array,
-//   formaterDateToShedule: PropTypes.func.isRequired
-// };
-// const mapDispatch = (dispatch) => {
-//   return {
-//     formaterDateToShedule: (time) => formaterDateToShedule(time)
-//   };
-// };
 
-// const mapState = (state) => {
-//   return {
-//     jobList: jobSelectors.jobListSelector(state)
-//   };
-// };
 export default Pagination;

@@ -3,7 +3,8 @@ import React from 'react';
 import mapImage from '../../../img/map.jpg';
 import MapIcon from '../../svg/MapIcon';
 
-import '../post/post.scss';
+import '../aside/aside.scss';
+
 const Aside = ({ postData }) => {
   if (!postData) {
     return '';

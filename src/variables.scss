@@ -1,0 +1,41 @@
+///Text color
+$color-main-text: rgba(56, 65, 93, 0.82);
+$color-white-text: rgb(255, 255, 255);
+$color-title-text: rgb(58, 69, 98);
+$color-description-text: rgb(135, 141, 157);
+$color-second-text: rgb(134, 140, 156);
+$color-pagination-text: rgba(56, 65, 93, 0.602109);
+$color-pagination-light-text: rgb(112, 119, 139);
+$color-pagination-active-text: rgb(85, 105, 158);
+$color-benefits-item-text: rgb(152, 139, 73);
+$color-name-text: rgb(231, 234, 240);
+$color-acide-text: rgba(255, 255, 255, 0.669635);
+
+///Bg color
+$main-button-bg: rgb(56, 69, 100);
+$body-cards-bg: rgb(230, 233, 242);
+$main-card-bg: rgb(239, 240, 245);
+$main-logo-bg: rgb(216, 216, 216);
+$footer-button-bg: rgb(228, 229, 233);
+$pagination-button-bg: rgb(255, 255, 255);
+$pagination-button-light-bg: rgb(249, 250, 253);
+$pagination-item-bg: rgba(161, 177, 219, 0.317343);
+$benefits-item-bg: rgba(255, 207, 0, 0.15);
+$main-dark-bg: rgb(42, 48, 71);
+
+//hadow color
+$main-shadow: 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px -1px rgb(0 0 0 / 12%),
+  0px 1px 3px rgb(0 0 0 / 20%);
+
+$pagination-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04),
+  0px 1px 3px rgba(0, 0, 0, 0.12);
+
+// border-radius
+$br: 8px;
+
+// border
+$border-number: 1px solid rgba(56, 65, 93, 0.0513276);
+$border-number-light: 1.3px solid rgb(222, 227, 239);
+$border-title-line: 1px solid rgb(58, 69, 98);
+$border-item: 1px solid rgba(0, 0, 0, 0.12);
+$border-benefits-item: 1px solid #ffcf00;
