@@ -1,6 +1,6 @@
 import React from 'react';
 import PaginationArrowIcon from '../../svg/PaginationArrowIcon';
-import '../pagination/pagination.scss';
+import './pagination.scss';
 
 const Pagination = () => {
   const paginationPage = Array(18)
