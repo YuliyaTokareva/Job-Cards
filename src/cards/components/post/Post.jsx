@@ -36,7 +36,6 @@ const Post = ({ jobList, getJobList }) => {
                 <ShareButtons />
               </div>
               <hr className="title-line top-page" />
-
               <ButtonApply />
             </div>
             <PostDescriptionHeader postData={postData} />
