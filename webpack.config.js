@@ -51,6 +51,11 @@ module.exports = (env, argv) => {
       open: true,
       hot: true,
       port: 8090
+    },
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000
     }
   };
 
