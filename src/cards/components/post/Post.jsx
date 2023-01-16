@@ -11,8 +11,8 @@ import Aside from '../aside/Aside';
 import Slider from '../slider/Slider';
 import Footer from '../footer/Footer';
 import PostLine from '../postLine/PostLine';
-import ShareButtons from '../shareButtons/ShareButtons';
-import ButtonApply from '../buttonApply/ButtonApply';
+// import ShareButtons from '../shareButtons/ShareButtons';
+// import ButtonApply from '../buttonApply/ButtonApply';
 import './post.scss';
 
 const Post = ({ jobList, getJobList }) => {
@@ -32,19 +32,15 @@ const Post = ({ jobList, getJobList }) => {
           <section className="vacancy">
             <div className="vacancy__header">
               <h1 className="vacancy__title">Job Details</h1>
-              <div className="vacancy__buttons ">
-                <ShareButtons />
-              </div>
+              <div className="vacancy__buttons ">{/* <ShareButtons /> */}</div>
               <hr className="title-line top-page" />
-              <ButtonApply />
+              {/* <ButtonApply /> */}
             </div>
             <PostDescriptionHeader postData={postData} />
           </section>
           <section className="vacancy-requirements">
             <p className="vacancy-requirements__text">{postData.description}</p>
-            <div className="vacancy-requirements__button-block">
-              <ButtonApply />
-            </div>
+            <div className="vacancy-requirements__button-block">{/* <ButtonApply /> */}</div>
           </section>
           <Slider postData={postData} />
           <section className="additional-info">
