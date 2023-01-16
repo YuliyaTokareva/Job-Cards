@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { formaterDateToShedule } from '../../../utils/dateUtils';
 import * as jobsActions from '../../job.actions';
 import * as jobSelectors from '../../job.selectors';
-import PostDescriptionHeader from '../postDescriptionHeader/PostDescriptionHeader';
+//import PostDescriptionHeader from '../postDescriptionHeader/PostDescriptionHeader';
 import Aside from '../aside/Aside';
 import Slider from '../slider/Slider';
 import Footer from '../footer/Footer';
@@ -36,7 +36,7 @@ const Post = ({ jobList, getJobList }) => {
               <hr className="title-line top-page" />
               {/* <ButtonApply /> */}
             </div>
-            <PostDescriptionHeader postData={postData} />
+            {/* <PostDescriptionHeader postData={postData} /> */}
           </section>
           <section className="vacancy-requirements">
             <p className="vacancy-requirements__text">{postData.description}</p>
