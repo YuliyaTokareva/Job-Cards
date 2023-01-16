@@ -1,6 +1,6 @@
 import React from 'react';
 import { formaterDateToShedule } from '../../../utils/dateUtils';
-import '../postDescriptionHeader/postDescriptionHeader.scss';
+import './postDescriptionHeader.scss';
 
 const PostDescriptionHeader = ({ postData }) => {
   if (!postData) {
