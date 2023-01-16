@@ -1,0 +1,32 @@
+@import '../../../breakpoints.scss';
+@import 'src/variables.scss';
+.vacancy {
+  &__button {
+    padding: 0;
+    margin: 0;
+    background: $pagination-button-bg;
+    height: 23px;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.5px;
+    color: $color-main-text;
+    display: flex;
+  }
+
+  &__button-icon-star {
+    width: 20px;
+    height: 20px;
+    margin-right: 11px;
+  }
+  &__share {
+    margin-left: 36px;
+  }
+  &__share-icon {
+    width: 18px;
+    height: 20px;
+    margin-right: 11px;
+  }
+}

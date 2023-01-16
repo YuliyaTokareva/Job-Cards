@@ -3,6 +3,9 @@ import PaginationArrowIcon from '../../svg/PaginationArrowIcon';
 import '../pagination/pagination.scss';
 
 const Pagination = () => {
+  const paginationPage = Array(18)
+    .fill(0)
+    .map((_, i) => i + 1);
   return (
     <section className="pagination">
       <button className="pagination__button left">
@@ -10,21 +13,17 @@ const Pagination = () => {
       </button>
       <div className="pagination__numbers">
         <ul className="pagination__list">
-          <li className="pagination__number">
-            <a href="#">1</a>
-          </li>
-          <li className="pagination__number active">
-            <a href="#">2</a>
-          </li>
-          <li className="pagination__number">
-            <a href="#">3</a>
-          </li>
-          <li className="pagination__number">
-            <a href="#">4</a>
-          </li>
-          <li className="pagination__number">
-            <a href="#">5</a>
-          </li>
+          {paginationPage.map((el, index) => {
+            if (index <= 4) {
+              return (
+                <li
+                  className={index === 2 ? 'pagination__number active' : 'pagination__number'}
+                  key={index}>
+                  <a href="#">{el}</a>
+                </li>
+              );
+            }
+          })}
           <li className="pagination__number">
             <a href="#">...</a>
           </li>

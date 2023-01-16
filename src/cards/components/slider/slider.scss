@@ -1,0 +1,19 @@
+@import '../../../breakpoints.scss';
+@import 'src/variables.scss';
+
+.slider {
+  margin-bottom: 64px;
+  &__image {
+    overflow: hidden;
+    display: flex;
+  }
+  &__image img {
+    width: 209px;
+    height: 115px;
+    background: $main-logo-bg;
+    border-radius: $br;
+    margin-right: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-
-import '../post/post.scss';
+import PostLine from '../postLine/PostLine';
+import './slider.scss';
 
 const Slider = ({ postData }) => {
   if (!postData) {
@@ -9,7 +9,7 @@ const Slider = ({ postData }) => {
   return (
     <section className="slider">
       <h2 className="slider__title title">Attached images</h2>
-      <div className="title-line"></div>
+      <PostLine />
       <div className="slider__image">
         {postData.pictures.map((img) => {
           return (

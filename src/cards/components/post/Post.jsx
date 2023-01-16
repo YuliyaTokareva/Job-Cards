@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import StarIcon from '../../../img/star-icon.png';
-import ShareIcon from '../../svg/ShareIcon';
-
 import { formaterDateToShedule } from '../../../utils/dateUtils';
 import * as jobsActions from '../../job.actions';
 import * as jobSelectors from '../../job.selectors';
@@ -13,6 +10,9 @@ import PostDescriptionHeader from '../postDescriptionHeader/PostDescriptionHeade
 import Aside from '../aside/Aside';
 import Slider from '../slider/Slider';
 import Footer from '../footer/Footer';
+import PostLine from '../postLine/PostLine';
+import ShareButtons from '../shareButtons/ShareButtons';
+import ButtonApply from '../buttonApply/ButtonApply';
 import './post.scss';
 
 const Post = ({ jobList, getJobList }) => {
@@ -32,44 +32,24 @@ const Post = ({ jobList, getJobList }) => {
           <section className="vacancy">
             <div className="vacancy__header">
               <h1 className="vacancy__title">Job Details</h1>
-              <div className="vacancy__buttons desktop">
-                <button className="vacancy__button vacancy__selected">
-                  <img src={`${StarIcon}`} alt="star-icon" className="vacancy__button-icon-star" />
-                  Save to my list
-                </button>
-                <button className="vacancy__button vacancy__share">
-                  <ShareIcon />
-                  Share
-                </button>
+              <div className="vacancy__buttons ">
+                <ShareButtons />
               </div>
-            </div>
-
-            <div className="title-line"></div>
-            <div className="title-line__top-button desktop">
-              <button className="button">Apply now</button>
-            </div>
-            <div className="vacancy__buttons mob">
-              <button className="vacancy__button vacancy__selected">
-                <img src={`${StarIcon}`} alt="star-icon" className="vacancy__button-icon-star" />
-                <span>Save to my list</span>
-              </button>
-              <button className="vacancy__button vacancy__share">
-                <ShareIcon />
-                Share
-              </button>
+              <hr className="title-line top-page" />
+              <ButtonApply />
             </div>
             <PostDescriptionHeader postData={postData} />
           </section>
           <section className="vacancy-requirements">
             <p className="vacancy-requirements__text">{postData.description}</p>
             <div className="vacancy-requirements__button-block">
-              <button className="vacancy-requirements__button-aply button">Apply now</button>
+              <ButtonApply />
             </div>
           </section>
           <Slider postData={postData} />
           <section className="additional-info">
             <h2 className="additional-info__title title">Additional info</h2>
-            <div className="title-line"></div>
+            <PostLine />
             <div className="additional-info__employment">
               <h4 className="additional-info__option-name">Employment type</h4>
               <ul className="additional-info__option-items">
