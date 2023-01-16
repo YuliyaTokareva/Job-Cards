@@ -34,14 +34,16 @@ const Post = ({ jobList, getJobList }) => {
               <h1 className="vacancy__title">Job Details</h1>
               <div className="vacancy__buttons ">{/* <ShareButtons /> */}</div>
               <hr className="title-line top-page" />
-              <ButtonApply />
+              <button className="button">Apply now</button>
+              {/* <ButtonApply /> */}
             </div>
             {/* <PostDescriptionHeader postData={postData} /> */}
           </section>
           <section className="vacancy-requirements">
             <p className="vacancy-requirements__text">{postData.description}</p>
             <div className="vacancy-requirements__button-block">
-              <ButtonApply />
+              <button className="button">Apply now</button>
+              {/* <ButtonApply /> */}
             </div>
           </section>
           <Slider postData={postData} />
