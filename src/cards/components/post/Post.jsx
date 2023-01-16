@@ -12,7 +12,7 @@ import Slider from '../slider/Slider';
 import Footer from '../footer/Footer';
 import PostLine from '../postLine/PostLine';
 // import ShareButtons from '../shareButtons/ShareButtons';
-import ButtonApply from '../postLine/ButtonApply';
+import ButtonApply from '../buttonApply/ButtonApply';
 import './post.scss';
 
 const Post = ({ jobList, getJobList }) => {
