@@ -1,18 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 import BookmarkIcon from '../../svg/BookmarkIcon';
 import StarRating from '../../svg/StarRating';
 import LocationIcon from '../../svg/LocationIcon';
 import Pagination from '../pagination/Pagination';
 import { formaterDateToShedule } from '../../../utils/dateUtils';
+import type Vacancy from '@entities/Vacancy';
 import * as jobSelectors from '../../job.selectors';
 
 import './cards.scss';
+type PostProps = {
+  jobList: Vacancy[];
+};
 
-const Cards = ({ jobList }) => {
+const Cards: React.FC<PostProps> = ({ jobList }) => {
   const starsRating = Array(5)
     .fill()
     .map((e, i) => i + 1);
@@ -64,10 +68,10 @@ const Cards = ({ jobList }) => {
     </>
   );
 };
-Cards.propTypes = {
-  jobList: PropTypes.array,
-  formaterDateToShedule: PropTypes.func.isRequired
-};
+// Cards.propTypes = {
+//   jobList: PropTypes.array,
+//   formaterDateToShedule: PropTypes.func.isRequired
+// };
 const mapDispatch = (dispatch) => {
   return {
     formaterDateToShedule: (time) => formaterDateToShedule(time)

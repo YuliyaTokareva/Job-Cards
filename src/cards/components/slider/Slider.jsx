@@ -24,20 +24,5 @@ const Slider = ({ postData }) => {
     </section>
   );
 };
-// Post.propTypes = {
-//   getJobList: PropTypes.func.isRequired,
-//   jobList: PropTypes.array,
-//   formaterDateToShedule: PropTypes.func.isRequired
-// };
-// const mapDispatch = (dispatch) => {
-//   return {
-//     getJobList: () => dispatch(jobsActions.getJobList()),
-//     formaterDateToShedule: (time) => formaterDateToShedule(time)
-//   };
-// };
-// const mapState = (state) => {
-//   return {
-//     jobList: jobSelectors.jobListSelector(state)
-//   };
-// };
+
 export default Slider;

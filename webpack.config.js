@@ -10,14 +10,14 @@ module.exports = (env, argv) => {
     mode = 'production';
   }
   const config = {
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     output: {
       filename: 'bundle.js'
     },
     module: {
       rules: [
         {
-          test: /.(js|jsx?)$/,
+          test: /.(js|jsx|ts|tsx?)$/,
           exclude: /node_modules/,
           use: ['babel-loader']
         },
@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
     },
 
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx', '.tsx', '.ts']
     },
     plugins: [
       new webpack.ProgressPlugin(),

@@ -13,9 +13,13 @@ import Footer from '../footer/Footer';
 import PostLine from '../postLine/PostLine';
 import ShareButtons from '../share/ShareButtons';
 import ButtonApply from '../buttonPost/ButtonApply';
+import type Vacancy from '@entities/Vacancy';
 import './post.scss';
-
-const Post = ({ jobList, getJobList }) => {
+type PostProps = {
+  jobList: Vacancy[];
+  getJobList: () => void;
+};
+const Post: React.FC = ({ jobList, getJobList }: PostProps) => {
   const { pathname } = useLocation();
   const postId = pathname.slice(1);
   useEffect(() => {
@@ -25,6 +29,7 @@ const Post = ({ jobList, getJobList }) => {
   if (!postData) {
     return '';
   }
+  console.log(jobList);
   return (
     <>
       <div className="job">
@@ -78,11 +83,11 @@ const Post = ({ jobList, getJobList }) => {
     </>
   );
 };
-Post.propTypes = {
-  getJobList: PropTypes.func.isRequired,
-  jobList: PropTypes.array,
-  formaterDateToShedule: PropTypes.func.isRequired
-};
+// Post.propTypes = {
+//   getJobList: PropTypes.func.isRequired,
+//   jobList: PropTypes.array,
+//   formaterDateToShedule: PropTypes.func.isRequired
+// };
 const mapDispatch = (dispatch) => {
   return {
     getJobList: () => dispatch(jobsActions.getJobList()),

@@ -2,10 +2,12 @@ import React from 'react';
 
 import mapImage from '../../../img/map.jpg';
 import MapIcon from '../../svg/MapIcon';
-
+import type Vacancy from '@entities/Vacancy';
 import '../aside/aside.scss';
-
-const Aside = ({ postData }) => {
+type AsideProps = {
+  postData: Vacancy;
+};
+const Aside = ({ postData }: AsideProps) => {
   if (!postData) {
     return '';
   }
@@ -36,20 +38,4 @@ const Aside = ({ postData }) => {
     </aside>
   );
 };
-// Post.propTypes = {
-//   getJobList: PropTypes.func.isRequired,
-//   jobList: PropTypes.array,
-//   formaterDateToShedule: PropTypes.func.isRequired
-// };
-// const mapDispatch = (dispatch) => {
-//   return {
-//     getJobList: () => dispatch(jobsActions.getJobList()),
-//     formaterDateToShedule: (time) => formaterDateToShedule(time)
-//   };
-// };
-// const mapState = (state) => {
-//   return {
-//     jobList: jobSelectors.jobListSelector(state)
-//   };
-// };
 export default Aside;
